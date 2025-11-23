@@ -6,7 +6,7 @@ interface GameInfoProps {
 }
 
 export const GameInfo: React.FC<GameInfoProps> = ({ game }) => {
-    const { turn, isCheck, isCheckmate, isDraw, isGameOver, resetGame } = game;
+    const { turn, isCheck, isCheckmate, isDraw, resetGame } = game;
 
     let status = '';
     if (isCheckmate) {

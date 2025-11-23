@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Chess, type Move, type Square } from 'chess.js';
 import { getBestMove } from './ai';
 
@@ -49,8 +49,6 @@ export function useChessGame(gameMode: GameMode = 'vs-player') {
             const next = [...prev];
             const movedPieceIndex = next.findIndex(p => p.square === move.from);
             if (movedPieceIndex === -1) return prev; // Should not happen
-
-            const movedPiece = { ...next[movedPieceIndex] };
 
             // Handle Capture
             if (move.captured) {
